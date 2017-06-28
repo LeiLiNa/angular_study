@@ -83,6 +83,5 @@ gulp.watch(app.srcPath + "style/index.less",["less"]);
 gulp.watch(app.srcPath + "script/**/*.js",["js"]);
 gulp.watch(app.srcPath + "image/**/*",["image"]);
 gulp.watch(app.srcPath + "data/**/*.json",["json"]);
-
 //偷懒方法
 gulp.task("default",["serve"]);

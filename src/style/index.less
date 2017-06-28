@@ -1,1 +1,21 @@
-@import "1.less";
+@import "template/head.less";
+
+.fs(@px){
+  font-size: unit(@px/37.5,rem);
+}
+
+.w(@px){
+  font-size: unit(@px/37.5,rem);
+}
+.h(@px){
+  font-size: unit(@px/37.5,rem);
+}
+html,body{
+  width: 100%;
+  height:100%;
+  padding:0;
+  margin: 0;
+}
+body{
+  .fs(16);
+}

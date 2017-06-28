@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/LeiLiNa/angular-study#readme",
   "dependencies": {
+    "angular-ui-router": "^1.0.3",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
