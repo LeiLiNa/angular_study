@@ -1,0 +1,25 @@
+@import "../variable.less";
+.foot{
+  position: fixed;
+  bottom:0;
+  .h(40);
+  left: 0;
+  right:0;
+  border-top:1px solid @lineColor;
+  li{
+    width: 33.3%;
+    .fs(16);
+    .lh(40);
+    color:@fontColor;
+    &.select{
+      background-color: @highLightBgColor;
+      color:@highLightColor;
+    }
+  }
+  .icon-search{
+    width:12px;
+    height: 12px;
+    background: url("../image/search.png");
+  }
+
+}

@@ -1,21 +1,63 @@
+@import "prototype.less";
 @import "template/head.less";
-
+@import "template/foot.less";
+@import "template/positionlist.less";
 .fs(@px){
   font-size: unit(@px/37.5,rem);
 }
-
 .w(@px){
-  font-size: unit(@px/37.5,rem);
+  width: unit(@px/37.5,rem);
 }
 .h(@px){
-  font-size: unit(@px/37.5,rem);
+  height: unit(@px/37.5,rem);
+}
+.lh(@px){
+  line-height: unit(@px/37.5,rem);
+}
+.mt(@px){
+  margin-top: unit(@px/37.5,rem);
+}
+.mb(@px){
+  margin-bottom: unit(@px/37.5,rem);
+}
+.ml(@px){
+  margin-left: unit(@px/37.5,rem);
+}
+.mr(@px){
+  margin-right: unit(@px/37.5,rem);
+}
+
+.pt(@px){
+  padding-top: unit(@px/37.5,rem);
+}
+.pb(@px){
+  padding-bottom: unit(@px/37.5,rem);
+}
+.pl(@px){
+  padding-left: unit(@px/37.5,rem);
+}
+.pr(@px){
+  padding-right: unit(@px/37.5,rem);
+}
+.bg-w{
+  background-color: #fff;
+}
+html,body,ul,li,p,h3{
+  padding:0;
+  margin: 0;
 }
 html,body{
   width: 100%;
   height:100%;
-  padding:0;
-  margin: 0;
+}
+button{
+  border:none;
+  -webkit-appearance: none;
+}
+ul{
+  list-style: none;
 }
 body{
   .fs(16);
+  background-color: @bodyBgColor;
 }
