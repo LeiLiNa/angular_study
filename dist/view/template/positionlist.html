@@ -1,5 +1,6 @@
 <ul class="postion-list">
-    <li class="item bg-w" ng-repeat="list in data">
+    <!--点击跳转页面可以用ng-click内置指令，最好用ui-sref-->
+    <li ui-sref="position({id:list.id})" class="item bg-w" ng-repeat="list in data">
         <img src="{{list.imageSrc}}"  class="logo fl">
         <h3 class="title">{{list.name}}</h3>
         <p class="content">
