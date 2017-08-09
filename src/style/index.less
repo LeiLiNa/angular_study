@@ -3,6 +3,9 @@
 @import "template/foot.less";
 @import "template/positionlist.less";
 @import "template/positionHead";
+@import "template/positionfoot";
+@import "template/positionInfo";
+@import "template/positionCompany";
 .fs(@px){
   font-size: unit(@px/37.5,rem);
 }
@@ -49,6 +52,9 @@
 .p-a{
   position:absolute;
 }
+.c-r{
+  color:red;
+}
 html,body,ul,li,p,h3{
   padding:0;
   margin: 0;
@@ -67,4 +73,7 @@ ul{
 body{
   .fs(16);
   background-color: @bodyBgColor;
+}
+button{
+  outline: none;
 }

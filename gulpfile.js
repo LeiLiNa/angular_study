@@ -79,7 +79,7 @@ gulp.task("serve",["build"],function(){
 //监测文件发生改变 自动构建
 gulp.watch("bower_components/**/*.js",["lib"]);
 gulp.watch(app.srcPath + "**/*.html",["html"]);
-gulp.watch(app.srcPath + "style/index.less",["less"]);
+gulp.watch(app.srcPath + "style/**/*.less",["less"]);
 gulp.watch(app.srcPath + "script/**/*.js",["js"]);
 gulp.watch(app.srcPath + "image/**/*",["image"]);
 gulp.watch(app.srcPath + "data/**/*.json",["json"]);

@@ -107,6 +107,58 @@
   width: 1rem;
   left: 0;
 }
+.bottom-btn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.06666667rem;
+  width: 100%;
+  background-color: #12d5b5;
+  color: #fff;
+}
+.position-desc {
+  margin-top: 10px;
+  font-size: 0.42666667rem;
+}
+.position-desc h5 {
+  margin-top: 0;
+  padding-left: 10px;
+  height: 1.06666667rem;
+  line-height: 1.06666667rem;
+  border-bottom: 1px solid #ccc;
+}
+.position-desc pre {
+  padding-left: 10px;
+  font-size: 0.37333333rem;
+  color: #9f9d9e;
+}
+.position-info {
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  padding: 26px 10px 18px 10px;
+}
+.position-info p {
+  height: 1.06666667rem;
+}
+.position-info .ml {
+  margin-left: 10px;
+}
+.position-info img {
+  right: 34px;
+  top: 35px;
+}
+.company-info {
+  padding: 20px 15px 13px 85px;
+}
+.company-info img {
+  width: 1.6rem;
+  height: 1.6rem;
+  left: 15px;
+}
+.company-info p {
+  height: 0.8rem;
+}
 .bg-w {
   background-color: #fff;
 }
@@ -115,6 +167,9 @@
 }
 .p-a {
   position: absolute;
+}
+.c-r {
+  color: red;
 }
 html,
 body,
@@ -140,4 +195,7 @@ ul {
 body {
   font-size: 0.42666667rem;
   background-color: #eee;
+}
+button {
+  outline: none;
 }
