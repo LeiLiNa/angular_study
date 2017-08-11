@@ -71,10 +71,11 @@
   background-color: #dbf9f4;
   color: #01c2a3;
 }
-.foot .icon-search {
-  width: 12px;
-  height: 12px;
-  background: url("../image/search.png");
+.foot li img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 .postion-list .item {
   padding: 7px 3px;
@@ -150,6 +151,7 @@
 }
 .company-info {
   padding: 20px 15px 13px 85px;
+  border-bottom: 1px solid #ccc;
 }
 .company-info img {
   width: 1.6rem;
@@ -158,6 +160,37 @@
 }
 .company-info p {
   height: 0.8rem;
+}
+.position-class {
+  background-color: #fff;
+  padding: 13px 9px;
+  font-size: 0.42666667rem;
+}
+.position-class button {
+  background-color: #def8f8;
+  padding: 10px 23px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+.position-class button.active {
+  background-color: #12d5b5;
+  color: #fff;
+}
+.info {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  padding: 13px 9px 5px 9px;
+}
+.info li {
+  font-size: 0.37333333rem;
+}
+.info li p {
+  height: 0.8rem;
+}
+.info li span {
+  right: 30px;
+  top: 0;
+  color: red;
 }
 .bg-w {
   background-color: #fff;
@@ -176,7 +209,8 @@ body,
 ul,
 li,
 p,
-h3 {
+h3,
+h5 {
   padding: 0;
   margin: 0;
 }

@@ -12,6 +12,10 @@ angular.module("app").config(["$stateProvider","$urlRouterProvider",function($st
         url:"/position/:id",            //根据不同的职位进行展示，所以通过id展示不同的页面
         templateUrl:"view/position.html",
         controller:"positionCtrl"
+    }).state("company",{
+        url:"/company/:id",
+        templateUrl:"view/company.html",
+        controller:"companyCtrl"
     });
     // 重定向url，如果访问的URL都不存在
     $urlRouterProvider.otherwise("main");
@@ -20,6 +24,21 @@ angular.module("app").config(["$stateProvider","$urlRouterProvider",function($st
 
 
 
+"use strict";
+angular.module("app").controller("companyCtrl",["$scope",function($scope){
+
+}]);
+"use strict";
+angular.module("app").controller("mainCtrl",["$scope","$http",function($scope,$http){
+    $http.get("/data/positionList.json").then(function(resp){
+       // console.log(resp.data);
+        $scope.list = resp.data;
+    }).catch();
+}]);
+"use strict";
+angular.module("app").controller("positionCtrl",["$scope",function($scope){
+
+}]);
 //详情页底部
 angular.module("app").directive("appFoot",[function(){
     return {
@@ -35,6 +54,14 @@ angular.module("app").directive("appHead",[function(){
         restrict:"A",
         replace:true,
         templateUrl:"view/template/head.html"
+    }
+}]);
+"use strict";
+angular.module("app").directive("appPositionClass",[function(){
+    return {
+        restrict:"A",
+        replce:true,
+        templateUrl:"view/template/positionClass.html"
     }
 }]);
 "use strict";
@@ -86,33 +113,4 @@ angular.module("app").directive("appPositionInfo",[function(){
         }
 
     }
-}]);
-"use strict";
-angular.module("app").controller("mainCtrl",["$scope",function($scope){
-    $scope.list=[{
-        id:1,
-        name:"销售",
-        imageSrc:"image/1.jpg",
-        city:"上海",
-        industry:"互联网",
-        time:"2016-6-01 11:05"
-    },{
-        id:2,
-        name:"工程师",
-        imageSrc:"image/2.jpg",
-        city:"上海",
-        industry:"互联网",
-        time:"2016-6-01 11:05"
-    },{
-        id:3,
-        name:"销售",
-        imageSrc:"image/1.jpg",
-        city:"上海",
-        industry:"互联网",
-        time:"2016-6-01 11:05"
-    }]
-}])
-"use strict";
-angular.module("app").controller("positionCtrl",["$scope",function($scope){
-
 }]);
