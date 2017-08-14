@@ -5,7 +5,8 @@ angular.module("app").directive("appPositionInfo",[function(){
         replace:true,
         templateUrl:"view/template/positionInfo.html",
         scope:{
-            "isActive":"="
+            "isActive":"=",
+            "isLogin":"="
         },
         link:function($scope){
             $scope.imgPath = $scope.isActive?"image/star-active.png":"image/star.png";

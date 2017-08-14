@@ -2,5 +2,7 @@
     <p><span>销售</span><span class="ml c-r">3k-5k</span></p>
     <p><span>上海</span><span class="ml">1-3年</span><span class="ml">专科</span></p>
     <p>成长空间大</p>
-    <img ng-src="{{imgPath}}" alt="" class="p-a">
+    <!--在看职位的时候会有一个登录和未登录的状态  在未登陆的时候五角星应该是隐藏的，投简历的状态应该是去登陆-->
+    <!--ng-show控制是否显示，ng-if控制是否存在-->
+    <img ng-src="{{imgPath}}" alt="" class="p-a" ng-show="isLogin">
 </div>

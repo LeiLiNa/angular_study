@@ -2,6 +2,26 @@
 angular.module("app",["ui.router"]);//引入路由
 
 "use strict";
+angular.module("app").controller("companyCtrl",["$scope",function($scope){
+
+}]);
+"use strict";
+angular.module("app").controller("mainCtrl",["$scope","$http",function($scope,$http){
+    $http.get("/data/positionList.json").then(function(resp){
+       // console.log(resp.data);
+        $scope.list = resp.data;
+    }).catch();
+}]);
+"use strict";
+angular.module("app").controller("positionCtrl",["$scope","$http","$state",function($scope,$http,$state){
+    $http.get("/data/position.json?id="+$state.params.id).then(function(res){
+        $scope.isLogin = false;
+        $scope.position = res.data;
+        console.log(res);
+    })
+
+}]);
+"use strict";
 //路由配置
 angular.module("app").config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
     $stateProvider.state("main",{
@@ -24,21 +44,6 @@ angular.module("app").config(["$stateProvider","$urlRouterProvider",function($st
 
 
 
-"use strict";
-angular.module("app").controller("companyCtrl",["$scope",function($scope){
-
-}]);
-"use strict";
-angular.module("app").controller("mainCtrl",["$scope","$http",function($scope,$http){
-    $http.get("/data/positionList.json").then(function(resp){
-       // console.log(resp.data);
-        $scope.list = resp.data;
-    }).catch();
-}]);
-"use strict";
-angular.module("app").controller("positionCtrl",["$scope",function($scope){
-
-}]);
 //详情页底部
 angular.module("app").directive("appFoot",[function(){
     return {
@@ -106,7 +111,8 @@ angular.module("app").directive("appPositionInfo",[function(){
         replace:true,
         templateUrl:"view/template/positionInfo.html",
         scope:{
-            "isActive":"="
+            "isActive":"=",
+            "isLogin":"="
         },
         link:function($scope){
             $scope.imgPath = $scope.isActive?"image/star-active.png":"image/star.png";
