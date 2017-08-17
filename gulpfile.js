@@ -37,6 +37,7 @@ gulp.task("json", function () {
 
 gulp.task("less", function () {
     gulp.src(app.srcPath + "style/index.less")
+        .pipe($.plumber())
         .pipe($.less())
         .pipe(gulp.dest(app.devPath + "css"))
         .pipe($.cssmin())
@@ -46,6 +47,7 @@ gulp.task("less", function () {
 //js文件处理
 gulp.task("js", function () {
     gulp.src(app.srcPath + "script/**/*.js")
+        .pipe($.plumber())                           //css js 运行错误是抛出错误不会中断执行
         .pipe($.concat("index.js"))
         .pipe(gulp.dest(app.devPath + "js"))
         .pipe($.uglify())

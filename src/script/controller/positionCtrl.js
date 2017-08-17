@@ -1,8 +1,10 @@
 "use strict";
-angular.module("app").controller("positionCtrl",["$scope","$http","$state","$q",function($scope,$http,$state,$q){
+angular.module("app").controller("positionCtrl",["$scope","$http","$state","$q","cache",function($scope,$http,$state,$q,cache){
+    cache.remove("to");
     $scope.isLogin = false;
     function getPositionInfo(){
         var def = $q.defer();
+        //$http.[post,delete,put;](url,{请求体},{配置})
         $http.get("/data/position.json?id="+$state.params.id).then(function(res){
             $scope.position = res.data;
             def.resolve(res);

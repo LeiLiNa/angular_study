@@ -1,0 +1,34 @@
+@import "../variable";
+.search-bar{
+  background-color: @headBgColor;
+  position: fixed;
+  .h(40);
+  .lh(40);
+  width: 100%;
+  img{
+    transform: scale(0.6);
+    position: absolute;
+    top:8px;
+    right:40px;
+  }
+  input{
+    .w(260);
+    .h(30);
+    border-radius: 15px;
+    background-color: @lineColor;
+   .pl(10);
+    color: @defaultColor;
+  }
+  button{
+    background-color:  @headBgColor;
+    &:first-child{
+      color:@defaultColor;
+      margin-left: 15px;
+    }
+    &:last-child{
+      color:@defaultColor;
+      margin-right: 15px;
+      .lh(40);
+    }
+  }
+}

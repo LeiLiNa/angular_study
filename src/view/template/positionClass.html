@@ -1,7 +1,7 @@
 <div>
     <div class="position-class">
         <h5>职位分类</h5>
-        <button ng-click="positionClassCurrent($index)" ng-class="isActive==$index?'active':''" ng-repeat="posClass in comp.positionClass" ng-bind="posClass.name"></button>
+        <button ng-click="positionClassCurrent($index)" ng-class="isActive===$index?'active':''" ng-repeat="posClass in comp.positionClass" ng-bind="posClass.name"></button>
         <ul class="info">
             <li class="p-r" ng-repeat="posList in positionLists">
                 <p ng-bind="posList.name"></p>

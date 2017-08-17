@@ -7,6 +7,7 @@
 @import "template/positionInfo";
 @import "template/positionCompany";
 @import "template/positionClass";
+@import "template/searchBar";
 .fs(@px){
   font-size: unit(@px/37.5,rem);
 }
@@ -56,7 +57,7 @@
 .c-r{
   color:red;
 }
-html,body,ul,li,p,h3,h5{
+html,body,ul,li,p,h3,h5,button,img{
   padding:0;
   margin: 0;
 }
@@ -67,6 +68,10 @@ html,body{
 button{
   border:none;
   -webkit-appearance: none;
+}
+input{
+  border:none;
+  outline: none;
 }
 ul{
   list-style: none;

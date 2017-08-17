@@ -13,6 +13,10 @@ angular.module("app").config(["$stateProvider","$urlRouterProvider",function($st
         url:"/company/:id",
         templateUrl:"view/company.html",
         controller:"companyCtrl"
+    }).state("search",{
+        url:"/search",
+        templateUrl:"view/search.html",
+        controller:"searchCtrl"
     });
     // 重定向url，如果访问的URL都不存在
     $urlRouterProvider.otherwise("main");
