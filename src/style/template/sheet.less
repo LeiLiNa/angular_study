@@ -1,0 +1,40 @@
+@import "../variable";
+.sheet{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.2);
+  z-index:90;
+  .wrap{
+    position: fixed;
+    left:8px;
+    right: 8px;
+    bottom:8px;
+    z-index:100;
+    ul{
+      border-radius: 5px;
+      overflow: scroll;
+      max-height: 500px;
+
+      li{
+        background-color: @sheetBgColor;
+        border-bottom: 1px solid @lineColor;
+        color:@sheetColor;
+        .h(50);
+        .lh(50);
+        .fs(14);
+      }
+    }
+    button{
+      .h(50);
+      .lh(50);
+      .fs(14);
+      margin-top:8px;
+      width: 100%;
+      border-radius: 5px;
+      background-color: @sheetBgColor;
+    }
+  }
+}

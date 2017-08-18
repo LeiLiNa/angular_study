@@ -1,7 +1,7 @@
 @import "../variable";
 .search-bar{
   background-color: @headBgColor;
-  position: fixed;
+  position: relative;
   .h(40);
   .lh(40);
   width: 100%;
@@ -12,12 +12,11 @@
     right:40px;
   }
   input{
-    .w(260);
+    .w(250);
     .h(30);
     border-radius: 15px;
-    background-color: @lineColor;
+    background-color: @defaultColor;
    .pl(10);
-    color: @defaultColor;
   }
   button{
     background-color:  @headBgColor;

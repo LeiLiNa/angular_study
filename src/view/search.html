@@ -1,4 +1,5 @@
 <div search-bar></div>
-<div search-tab></div>
-<div app-position-list></div>
+<div search-tab list="tabList" tab-click="tClick(id,name)"></div>
+<div app-position-list data="positionList"></div>
 <div app-foot></div>
+<div app-sheet list="sheet.list" visible="sheet.visible" select="sheetSelect(id,name)"></div>
