@@ -1,5 +1,5 @@
 <ul class="postion-list">
-    <!--点击跳转页面可以用ng-click内置指令，最好用ui-sref  ,ng-src  只写src 能实现图片加载，但是console会报错-->
+    <!--点击跳转页面可以用ng-click内置指令，最好用ui-sref  ,ng-src  只写src 能实现图片加载，但是控制台会报错-->
     <li ui-sref="position({id:list.id})" class="item bg-w" ng-repeat="list in data|filterByObj:{'id':'p1'}">
         <img ng-src="{{list.imageUrl}}"  class="logo fl">
         <h3 class="title" ng-bind="list.job"></h3>
