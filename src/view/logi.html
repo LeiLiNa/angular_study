@@ -1,8 +1,15 @@
 <div class="login">
-    <form>
-        <input type="text" placeholder="输入手机号">
-        <input type="text" placeholder="输入密码">
-        <button>登录</button>
-        <button>注册</button>
+    <form autocomplete="off">
+        <div class="form-line">
+            <span class="account d-lb v-m"></span>
+            <input type="text" placeholder="输入手机号" class="v-m"  autocomplete="off" name="user">
+        </div>
+       <div class="form-line">
+           <span class="lock d-lb v-m"></span>
+           <!--<input type="password" style="display: none;"/>-->
+           <input class="form-control v-m" type="password" name="tradePassword" id="txPassword" autocomplete="new-password" placeholder="输入密码"/>
+       </div>
+        <button class="d-b login-btn">登录</button>
+        <button class="d-b register-btn">注册</button>
     </form>
 </div>
