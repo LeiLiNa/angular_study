@@ -10,6 +10,7 @@
   form{
     .mt(55);
     .form-line{
+      position: relative;
       margin-right: auto;
       margin-left: auto;
       .w(300);
@@ -30,24 +31,29 @@
         margin:0 10px;
         background: url("../image/lock.png");
       }
-    }
-    input{
-      height:100%;
-      .w(230);
-      background-color: rgba(0,0,0,0);
-      &::-webkit-input-placeholder{
+      input{
+        height:100%;
+        .w(230);
+        background-color: rgba(0,0,0,0);
+        &::-webkit-input-placeholder{
+          color:#fff;
+        }
         color:#fff;
       }
-      //&:-webkit-autofill {
-      //  -webkit-box-shadow: 0 0 0 1000px white inset !important
-      //}
-      color:#fff;
+      .validation-invalid{
+        position: absolute;
+        color:red;
+        right:4px;
+        top:13px;
+        font-size:12px;
+      }
     }
     .message_wrap{
       .mt(40);
       margin-right: auto;
       margin-left: auto;
       .w(300);
+      position: relative;
       .message_box{
         .h(40);
         .w(165);
@@ -57,12 +63,23 @@
           color:#fff;
         };
       }
+      .validation-invalid{
+        position: absolute;
+        color:red;
+        left:106px;
+        top:13px;
+        font-size:12px;
+      }
       .sendMessage{
         .fs(14);
         color:@headBgColor;
         border:1px solid @headBgColor;
         padding:0 5px;
         .mt(16);
+        &.disabled{
+          background-color: @lineColor;
+          border-color:@lineColor;
+        }
       }
     }
     button{

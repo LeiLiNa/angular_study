@@ -1,19 +1,21 @@
 <div class="register">
-    <form autocomplete="off">
+    <form autocomplete="off" name="form">
         <div class="form-line">
             <span class="account d-lb v-m"></span>
-            <input type="text" placeholder="输入手机号" class="v-m"  autocomplete="off" name="user">
+            <input type="text" placeholder="输入手机号" class="v-m"  autocomplete="off" name="user" validator="phone" ng-model="user.phone">
         </div>
         <div class="form-line">
             <span class="lock d-lb v-m"></span>
             <!--<input type="password" style="display: none;"/>-->
-            <input class="form-control v-m" type="password" name="tradePassword" id="txPassword" autocomplete="new-password" placeholder="设置六位以上的密码"/>
+            <input class="form-control v-m" type="password" name="tradePassword" id="txPassword"
+                   autocomplete="new-password" placeholder="设置六位以上的密码" validator="password" ng-model="user.password"/>
         </div>
         <div class="message_wrap">
-            <input type="text" placeholder="短信验证码" class="message_box">
-            <span class="sendMessage fr">发送短信</span>
+            <input type="text" placeholder="短信验证码" class="message_box" ng-model="user.code" name="code" validator="code">
+            <!--判断time是否存在，如果存在则禁止点击按钮，按钮为灰色状态-->
+            <span class="sendMessage fr {{time?'disabled':''}}" ng-click="time?1==1:send()" ng-bind=time?time:'发送短信'></span>
         </div>
         <button class="d-b login-btn">登录</button>
-        <button class="d-b register-btn">注册</button>
+        <button class="d-b register-btn" validation-submit="form" ng-click="submit()">注册</button>
     </form>
 </div>

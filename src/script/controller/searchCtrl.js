@@ -1,8 +1,10 @@
 "use strict";
-angular.module("app").controller("searchCtrl",["$scope","$http","dict","filterByObj",function($scope,$http,dict,filterByObj){
+angular.module("app").controller("searchCtrl",["$scope","$http","dict",function($scope,$http,dict){
     $scope.sheet = {};
+    $scope.name = "";
+    $scope.filterObj = {};
     $scope.search = function(){
-        $http.get("/data/positionList.json").then(function(res){
+        $http.get("/data/positionList.json?name="+$scope.name).then(function(res){
             $scope.positionList = res.data;
         });
     }
@@ -17,6 +19,7 @@ angular.module("app").controller("searchCtrl",["$scope","$http","dict","filterBy
         "id": "scale",
         "name": "公司规模"
     }];
+
     var tab = '';  //目的是为了将当前点击tab id保存，然后在循环tablist的时候与元素的id进行比较，最终达到要替换tab中的那么值，使得
     //sheet列表选中的内容在tab上显示
     $scope.tClick = function(id,name){
@@ -32,7 +35,9 @@ angular.module("app").controller("searchCtrl",["$scope","$http","dict","filterBy
                     item.name = name;
                 }
             })
+            $scope.filterObj[tab + "Id"] = id;
         }else{
+            delete $scope.filterObj[tab + "Id"];
             angular.forEach($scope.tabList,function(item){
                 if(item.id === tab){
                     switch(item.id){
@@ -49,6 +54,7 @@ angular.module("app").controller("searchCtrl",["$scope","$http","dict","filterBy
                 }
             })
         }
+        $scope.sheet.visible = false;
     };
 
 }]);
